@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -13,9 +14,6 @@ public class FacturaVO implements Serializable {
 
     @NotNull(message = "cliId can not null")
     private Long cliId;
-
-    @NotNull(message = "fechaEmision can not null")
-    private String fechaEmision;
 
     @NotNull(message = "total can not null")
     private BigDecimal total;

@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -58,9 +58,7 @@ public class FacturaService {
         BeanUtils.copyProperties(nuevaFactura, facturaPorCrear);
         facturaPorCrear.setNumero(obtenerSiguienteNumero());
         facturaPorCrear.setCli(new Cliente(nuevaFactura.getCliId()));
-        // Format String dates to LocalDate
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        facturaPorCrear.setFechaEmision(LocalDate.parse(nuevaFactura.getFechaEmision(), formatter));
+        facturaPorCrear.setFechaEmision(LocalDate.now());
 
         Factura facturaCreada = facturaRepository.save(facturaPorCrear);
 
