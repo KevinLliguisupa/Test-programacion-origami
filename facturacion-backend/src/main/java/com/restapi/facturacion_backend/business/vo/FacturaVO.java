@@ -20,6 +20,8 @@ public class FacturaVO implements Serializable {
     @NotNull(message = "total can not null")
     private BigDecimal total;
 
+    private String observaciones;
+
     @NotNull(message = "estadoPago can not null")
     private String estadoPago;
 

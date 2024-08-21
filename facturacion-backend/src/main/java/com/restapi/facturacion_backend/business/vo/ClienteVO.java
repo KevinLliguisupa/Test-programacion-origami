@@ -18,6 +18,9 @@ public class ClienteVO implements Serializable {
     @NotNull(message = "apellidos can not null")
     private String apellidos;
 
+    @NotNull(message = "cedula can not null")
+    private String cedula;
+
     private String direccion;
 
     private String telefono;

@@ -37,6 +37,9 @@ public class Factura implements Serializable {
     @Column(name = "total", nullable = false, precision = 7, scale = 2)
     private BigDecimal total;
 
+    @Column(name = "observaciones", length = Integer.MAX_VALUE)
+    private String observaciones;
+
     @Column(name = "estado_pago", nullable = false, length = Integer.MAX_VALUE)
     private String estadoPago;
 

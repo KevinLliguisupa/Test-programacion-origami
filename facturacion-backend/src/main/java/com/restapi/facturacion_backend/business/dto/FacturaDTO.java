@@ -21,6 +21,8 @@ public class FacturaDTO implements Serializable {
 
     private BigDecimal total;
 
+    private String observaciones;
+
     private String estadoPago;
 
     private List<FacturaDetalleDTO> facturaDetalles;

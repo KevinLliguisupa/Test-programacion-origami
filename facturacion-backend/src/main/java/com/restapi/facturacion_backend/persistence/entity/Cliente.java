@@ -12,8 +12,8 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
 @Table(name = "cliente")
+@Entity
 public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -30,6 +30,9 @@ public class Cliente implements Serializable {
 
     @Column(name = "direccion", length = Integer.MAX_VALUE)
     private String direccion;
+
+    @Column(name = "cedula", nullable = false, length = 10)
+    private String cedula;
 
     @Column(name = "telefono", length = Integer.MAX_VALUE)
     private String telefono;

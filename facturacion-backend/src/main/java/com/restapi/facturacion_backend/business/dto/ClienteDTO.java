@@ -10,6 +10,8 @@ public class ClienteDTO implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long cliId;
 
+    private String cedula;
+
     private String nombres;
 
     private String apellidos;

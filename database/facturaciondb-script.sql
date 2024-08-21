@@ -20,6 +20,7 @@ CREATE TABLE public.cliente (
                 cli_id BIGINT NOT NULL DEFAULT nextval('public.cliente_cli_id_seq'),
                 nombres VARCHAR NOT NULL,
                 apellidos VARCHAR NOT NULL,
+                cedula VARCHAR(10) NOT NULL,
                 direccion VARCHAR,
                 telefono VARCHAR,
                 email VARCHAR,
@@ -38,6 +39,7 @@ CREATE TABLE public.factura (
                 numero BIGINT NOT NULL UNIQUE,
                 fecha_emision DATE NOT NULL,
                 total NUMERIC(7,2) NOT NULL,
+                observaciones VARCHAR,
                 estado_pago VARCHAR NOT NULL,
                 CONSTRAINT factura_pk PRIMARY KEY (fac_id)
 );
@@ -110,13 +112,13 @@ VALUES
 ------------------CLIENTE--------------------
 ---------------------------------------------
 
-INSERT INTO cliente (nombres, apellidos, direccion, telefono, email, estado)
+INSERT INTO cliente (nombres, apellidos, cedula, direccion, telefono, email, estado)
 VALUES
-('Juan', 'Perez', 'Av. Siempre Viva 123', '555-1234', 'juan.perez@example.com', TRUE),
-('Maria', 'Gomez', 'Calle Falsa 456', '555-5678', 'maria.gomez@example.com', TRUE),
-('Carlos', 'Lopez', 'Boulevard Central 789', '555-9876', 'carlos.lopez@example.com', TRUE),
-('Ana', 'Martinez', 'Av. Principal 321', '555-6543', 'ana.martinez@example.com', TRUE),
-('Luis', 'Ramirez', 'Calle Secundaria 789', '555-3210', 'luis.ramirez@example.com', TRUE);
+('Juan', 'Perez', '0145889756', 'Av. Siempre Viva 123', '555-1234', 'juan.perez@example.com', TRUE),
+('Maria', 'Gomez', '1758965485', 'Calle Falsa 456', '555-5678', 'maria.gomez@example.com', TRUE),
+('Carlos', 'Lopez', '0128965478', 'Boulevard Central 789', '555-9876', 'carlos.lopez@example.com', TRUE),
+('Ana', 'Martinez', '1285698430', 'Av. Principal 321', '555-6543', 'ana.martinez@example.com', TRUE),
+('Luis', 'Ramirez', '1547896547', 'Calle Secundaria 789', '555-3210', 'luis.ramirez@example.com', TRUE);
 
 ---------------------------------------------
 ------------------FACTURA--------------------
